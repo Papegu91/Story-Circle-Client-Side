@@ -18,7 +18,7 @@ Group 13
 ## Story Circle  ( Client Side Repository)
 
 # Project setup
-- React Js
+- React Vite
 - Flask
 - TailWind CSS
 
