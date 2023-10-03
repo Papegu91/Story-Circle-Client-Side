@@ -20,7 +20,6 @@ Group 13
 # Project setup
 - React Vite
 - Flask
-- TailWind CSS
 
 # Lisence
 MIT License
