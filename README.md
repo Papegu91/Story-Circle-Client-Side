@@ -1,8 +1,9 @@
 # Project Description
-
+Story Circle is a social platform connecting book enthusiasts, enabling them to create and join book clubs. Users can engage in discussions, explore a rich library of books, and share their insights through comments.
 
 # How to launch project
-
+Follow the link provided in the releases
+( If you encounter any error please contact any Group 13 Member )
 
 **Note** 
 
@@ -20,6 +21,8 @@ Group 13
 # Project setup
 - React Vite
 - Flask
+- FormIK
+- Yup
 
 # Lisence
 MIT License
