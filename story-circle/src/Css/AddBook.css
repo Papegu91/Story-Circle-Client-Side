@@ -1,27 +1,14 @@
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
-}
-
-.signUpBackgroundDiv{
-  height: 100vh; 
-  background-image: url("https://tinyurl.com/ym4t5z58");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-} */
-
 body {
     background-color: #aed6f1;
     margin: 0;
-    font-family: Arial, sans-serif;
+  }
+
+  .logInBackgroundDiv {
+    background-color: #aed6f1;
+    height: 100%; /* Ensure it covers the whole page */
   }
   
-  .signUpDiv {
+  .addBookDiv {
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -66,4 +53,3 @@ body {
   .error-message:first-child {
     margin-top: 0;
   }
-  

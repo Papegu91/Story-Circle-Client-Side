@@ -1,0 +1,108 @@
+.text-div {
+    background-color: #FDF2E9;
+    padding: 20px;
+  }
+
+.text-div h1 {
+  font-size: 50px;
+} 
+  
+  .create-club-button {
+    background-color: #aed6f1;
+    color: #fff;
+    border-radius: 15px; /* Add border radius */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    margin-bottom: 10px;
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Add pointer cursor */
+    width: 300px; 
+    height: 55px; 
+    font-size: 24px; 
+  }
+  
+  .create-club-button:focus {
+    outline: none; /* Remove button outline on focus */
+  }
+
+  .create-club-button:hover {
+    background-color: #3498db ;
+  }
+  
+  .create-club-button:active {
+    transform: translateY(2px); /* Add a slight press-down effect */
+  }
+  
+  /* ClubItem CSS */
+.club-items-holder {
+  background-color: white; /* White background color */
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+}
+
+.clubContainer {
+  background-color: #D9D9D9; /* Background color */
+  border-radius: 25px; /* Border radius of 25px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow */
+  display: flex; /* Display children horizontally */
+  justify-content: space-between; /* Space between children */
+  align-items: center; /* Vertically align children */
+  padding: 10px; /* Add padding for spacing */
+  margin-bottom: 10px; /* Space between club items */
+  width: 80%;
+  margin-left: 20px;
+}
+
+.clubContainer:hover {
+  background-color: #626567;
+}
+
+.iconDiv {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.clubTextDiv {
+  flex: 3;
+}
+
+.clubTextDiv h2 {
+  margin-bottom: 10px; /* Add some space between lines */
+}
+
+.joinButtonDiv {
+  flex: 1;
+  text-align: right;
+}
+
+.joinButtonDiv button {
+  background-color: #AED6F1;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.joinButtonDiv button:focus {
+  outline: none;
+}
+
+.joinButtonDiv button:hover {
+  background-color: #3498db; 
+}
+
+.skeleton-loader {
+  background-color: #d9d9d9;
+  height: 200px;
+  width: 70%;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.error-message {
+  color: #E74C3C;
+  background-color: #f8d7da; /* Use a light red background color */
+  padding: 10px;
+  border: 1px solid #f5c6cb; /* Add a border for a box effect */
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add some space below the error message */
+}

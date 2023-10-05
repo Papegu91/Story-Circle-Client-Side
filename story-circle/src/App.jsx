@@ -10,8 +10,8 @@ import LogIn from './Components/LogIn'
 import SignUp from './Components/SignUp'
 import NavBar from './Components/Navbar'
 import HomePage from './Components/HomePage'
-
-
+import CreateClub from './Components/CreateClub'
+import AddBook from './Components/AddBook'
 
 function App() {
 
@@ -27,6 +27,8 @@ function App() {
         <Route path="/books" exact="true" element={<Books />} />
         <Route path="/books/:index" exact="true" element={<BookPage />} />
         <Route path="/about" exact="true" element={<AboutPage />} />
+        <Route path="/create-club" exact="true" element={<CreateClub />} />
+        <Route path="/add-book" exact="true" element={<AddBook />} />
       </Routes>
     </>
   )

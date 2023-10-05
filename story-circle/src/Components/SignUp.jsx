@@ -18,7 +18,7 @@ export default function SignUp() {
     email: yup.string().email('Invalid email').required('Email is required'),
     username: yup.string().required('Username is required'),
     password: yup.string().required('Password is required'),
-    profile_pic: yup.string().url('Invalid URL'),
+    profile_pic: yup.string().url('Invalid URL').optional(),
   });
 
   const formik = useFormik({
@@ -28,7 +28,7 @@ export default function SignUp() {
       email: '',
       username: '',
       password: '',
-      profile_pic: null,
+      profile_pic: '',
     },
     validationSchema: formSchema,
     onSubmit: async (values) => {
@@ -77,104 +77,107 @@ export default function SignUp() {
   });
 
   return (
-    <div className="signUpDiv">
-      <h1>Sign Up </h1>
-      <form onSubmit={formik.handleSubmit} style={{ margin: "30px" }}>
-        {/* First Name */}
-        <label htmlFor="first_name">First Name</label>
-        <br />
-        <input
-          id="first_name"
-          name="first_name"
-          onChange={formik.handleChange}
-          value={formik.values.first_name}
-          required
-        />
-        {formik.touched.first_name && formik.errors.first_name? (
-          <div style={{ color: 'red' }}>{formik.errors.first_name}</div>
-        ) : null}
-        <br />
-
-        {/* Last Name */}
-        <label htmlFor="last_name">Last Name</label>
-        <br />
-        <input
-          id="last_name"
-          name="last_name"
-          onChange={formik.handleChange}
-          value={formik.values.last_name}
-        />
-        {formik.touched.last_name && formik.errors.last_name ? (
-          <div style={{ color: 'red' }}>{formik.errors.last_name}</div>
-        ) : null}
-        <br />
-
-        {/* Email */}
-        <label htmlFor="email">Email Address</label>
-        <br />
-        <input
-          id="email"
-          name="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div style={{ color: 'red' }}>{formik.errors.email}</div>
-        ) : null}
-        <br />
-
-        {/* Username */}
-        <label htmlFor="username">Username</label>
-        <br />
-        <input
-          id="username"
-          name="username"
-          onChange={formik.handleChange}
-          value={formik.values.username}
-        />
-        {formik.touched.username && formik.errors.username ? (
-          <div style={{ color: 'red' }}>{formik.errors.username}</div>
-        ) : null}
-        <br />
-
-        {/* Password */}
-        <label htmlFor="password">Password</label>
-        <br />
-        <input
-          id="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div style={{ color: 'red' }}>{formik.errors.password}</div>
-        ) : null}
-        <br />
-
-        {/* Profile Picture URL */}
-        <label htmlFor="profile_pic">Profile Picture URL</label>
-        <br />
-        <input
-          id="profile_pic"
-          name="profile_pic"
-          onChange={formik.handleChange}
-          value={formik.values.profile_pic}
-        />
-        {formik.touched.profile_pic && formik.errors.profile_pic ? (
-          <div style={{ color: 'red' }}>{formik.errors.profile_pic}</div>
-        ) : null}
-        <br />
-
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <button type="submit">Sign Up</button>
-        )}
-      </form>
-      {Object.keys(errors).length > 0 && (
-        <p style={{ color: "red" }}>{errors}</p>
-      )}
+    <>
+      <div className="signUpBackgroundDiv">
+        <div className="signUpDiv">
+          <h1>Sign Up</h1>
+          <form onSubmit={formik.handleSubmit} style={{ margin: "30px" }}>
+            {/* First Name */}
+            <label htmlFor="first_name">First Name</label>
+            <br />
+            <input
+              id="first_name"
+              name="first_name"
+              onChange={formik.handleChange}
+              value={formik.values.first_name}
+            />
+            {formik.touched.first_name && formik.errors.first_name ? (
+              <div style={{ color: 'red' }}>{formik.errors.first_name}</div>
+            ) : null}
+            <br />
+  
+            {/* Last Name */}
+            <label htmlFor="last_name">Last Name</label>
+            <br />
+            <input
+              id="last_name"
+              name="last_name"
+              onChange={formik.handleChange}
+              value={formik.values.last_name}
+            />
+            {formik.touched.last_name && formik.errors.last_name ? (
+              <div style={{ color: 'red' }}>{formik.errors.last_name}</div>
+            ) : null}
+            <br />
+  
+            {/* Email */}
+            <label htmlFor="email">Email Address</label>
+            <br />
+            <input
+              id="email"
+              name="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div style={{ color: 'red' }}>{formik.errors.email}</div>
+            ) : null}
+            <br />
+  
+            {/* Username */}
+            <label htmlFor="username">Username</label>
+            <br />
+            <input
+              id="username"
+              name="username"
+              onChange={formik.handleChange}
+              value={formik.values.username}
+            />
+            {formik.touched.username && formik.errors.username ? (
+              <div style={{ color: 'red' }}>{formik.errors.username}</div>
+            ) : null}
+            <br />
+  
+            {/* Password */}
+            <label htmlFor="password">Password</label>
+            <br />
+            <input
+              id="password"
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <div style={{ color: 'red' }}>{formik.errors.password}</div>
+            ) : null}
+            <br />
+  
+            {/* Profile Picture URL */}
+            <label htmlFor="profile_pic">Profile Picture URL</label>
+            <br />
+            <input
+              id="profile_pic"
+              name="profile_pic"
+              onChange={formik.handleChange}
+              value={formik.values.profile_pic}
+            />
+            {formik.touched.profile_pic && formik.errors.profile_pic ? (
+              <div style={{ color: 'red' }}>{formik.errors.profile_pic}</div>
+            ) : null}
+            <br />
+  
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <button type="submit">Sign Up</button>
+            )}
+          </form>
+          {Object.keys(errors).length > 0 && (
+            <p style={{ color: "red" }}>{errors}</p>
+          )}
           <p>Already have an account? <Link to="/login">Login here</Link></p>
-    </div>
-  );
+        </div>
+      </div>
+    </>
+  );  
 }

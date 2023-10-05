@@ -1,0 +1,118 @@
+.text-div {
+    background-color: #FDF2E9;
+    padding: 20px;
+  }
+
+.text-div h1 {
+  font-size: 50px;
+} 
+  
+  .add-book-button {
+    background-color: #aed6f1;
+    color: #fff;
+    border-radius: 15px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 10px;
+    border: none; 
+    cursor: pointer;
+    width: 300px; 
+    font-size: 24px; 
+
+  }
+  
+  .add-book-button:focus {
+    outline: none;
+  }
+
+  .add-book-button:hover {
+    background-color: #3498db ;
+  }
+  
+  .add-book-button:active {
+    transform: translateY(2px); 
+  }
+  
+  /* ClubItem CSS */
+.book-items-holder {
+  background-color: white; 
+  min-height: 100vh;
+}
+
+.bookContainer {
+  background-color: #D9D9D9; 
+  border-radius: 25px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; 
+  margin-bottom: 10px;
+  width: 80%;
+  margin-left: 20px;
+}
+
+.bookContainer:hover {
+  background-color: #626567;
+}
+
+
+.iconDiv {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.bookTextDiv {
+  flex: 3;
+}
+
+.bookTextDiv h2 {
+  margin-bottom: 10px; /* Add some space between lines */
+}
+
+.moreButtonDiv {
+  flex: 1;
+  text-align: right;
+}
+
+.moreButtonDiv button {
+  background-color: #AED6F1;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.moreButtonDiv button:focus {
+  outline: none;
+}
+
+.moreButtonDiv button:hover {
+  background-color: #3498db; 
+}
+
+.error-message {
+  color: #E74C3C;
+  background-color: #f8d7da; /* Use a light red background color */
+  padding: 10px;
+  border: 1px solid #f5c6cb; /* Add a border for a box effect */
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add some space below the error message */
+}
+
+.recommendedBookContainer {
+  background-color: #f9f5e1; /* Light gold background color */
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  margin-left: 20px;
+}
+
+
+
+

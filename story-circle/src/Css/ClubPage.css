@@ -1,0 +1,123 @@
+.majorclubdiv{
+    background-color: #fff;
+}
+
+.main-club-div {
+    background-color: white;
+  }
+  
+  .image-title-div {
+    height: 200px; /* Adjust the height as per your design */
+    background-image: url('https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+  }
+  
+  .club-info-div {
+    background-color: #FDF2E9;
+    padding: 20px; 
+    padding-left: 40px;
+  }
+  
+  .current-book-div, .previous-books-div {
+    background-color: #fff;
+  }
+  
+  .club-messages-div, .messages-holder {
+    background-color: #d9d9d9;
+  }
+  
+  .club-messages-div {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column; /* Change to column */
+  }
+  
+  .messages-holder {
+    background-color: #fff;
+    flex: 1; /* Take remaining vertical space */
+    overflow-y: auto; /* Add scroll if needed */
+  }
+  
+  
+  .messages-holder div {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-container {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .input-container input {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-container button {
+    background-color: #E74C3C;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .bookContainer {
+    background-color: #D9D9D9; /* Background color */
+    border-radius: 25px; /* Border radius of 25px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow */
+    display: flex; /* Display children horizontally */
+    justify-content: space-between; /* Space between children */
+    align-items: center; /* Vertically align children */
+    padding: 10px; /* Add padding for spacing */
+    margin-bottom: 10px; /* Space between club items */
+    width: 80%;
+    margin-left: 20px;
+  }
+  
+  .iconDiv {
+    flex: 1;
+  }
+  
+  .bookTextDiv {
+    flex: 3;
+  }
+  
+  .bookTextDiv h2 {
+    margin-bottom: 10px; /* Add some space between lines */
+  }
+  
+  .moreButtonDiv {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .moreButtonDiv button {
+    background-color: #AED6F1;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .moreButtonDiv button:focus {
+    outline: none;
+  }
+  
+  .moreButtonDiv button:hover {
+    background-color: #3498db; 
+  }
+  

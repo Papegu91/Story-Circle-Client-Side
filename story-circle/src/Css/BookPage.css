@@ -1,0 +1,73 @@
+.main-book-div {
+    background-color: white;
+  }
+  
+  .image-title-div-books {
+    height: 200px; 
+    background-image: url('https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .book-info-div {
+    background-color: #FDF2E9;
+    padding: 20px; 
+    padding-left: 40px;
+  }
+    
+  .book-comments-div, .comments-holder {
+    background-color: #d9d9d9;
+  }
+  
+  .book-comments-div {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column; /* Change to column */
+  }
+  
+  .comments-holder {
+    background-color: #fff;
+    flex: 1; /* Take remaining vertical space */
+    overflow-y: auto; /* Add scroll if needed */
+  }
+  
+  
+  .comments-holder div {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-container {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column; /* Change to column */
+    max-width: 50%;
+    justify-content: center;
+  }
+  
+  .input-container input {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-container button {
+    background-color: #E74C3C;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 40%;
+  }
+
+  

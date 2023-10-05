@@ -36,7 +36,8 @@ export default function LogIn() {
   
         if (resp.ok) {
           let re = await resp.json();
-          localStorage.setItem("loginToken", re.access_token); // sets token to local storage
+          localStorage.setItem("loginToken", re.access_token) // sets token to local storage
+          localStorage.setItem("user_id", re.user_id)
           console.log(re)  
           setIsLoading(true);
           setTimeout(() => {
@@ -66,48 +67,51 @@ export default function LogIn() {
   });
 
   return (
-    <div className="logInDiv">
-      <h1>Log In </h1>
-      <form onSubmit={formik.handleSubmit} style={{ margin: "30px" }}>
-
-        {/* Username */}
-        <label htmlFor="username">Username</label>
-        <br />
-        <input
-          id="username"
-          name="username"
-          onChange={formik.handleChange}
-          value={formik.values.username}
-        />
-        {formik.touched.username && formik.errors.username ? (
-          <div style={{ color: 'red' }}>{formik.errors.username}</div>
-        ) : null}
-        <br />
-
-        {/* Password */}
-        <label htmlFor="password">Password</label>
-        <br />
-        <input
-          id="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div style={{ color: 'red' }}>{formik.errors.password}</div>
-        ) : null}
-        <br />
-
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <button type="submit">Log In</button>
-        )}
-      </form>
-      {Object.keys(errors).length > 0 && (
-        <p style={{ color: "red" }}>{errors}</p>
-      )}
-      <p>Don't have an account? <Link to="/signup">Sign up here</Link></p>
-    </div>
-  );
+    <>
+      <div className="logInBackgroundDiv">
+        <div className="logInDiv">
+          <h1>Log In</h1>
+          <form onSubmit={formik.handleSubmit} style={{ margin: "30px" }}>
+            {/* Username */}
+            <label htmlFor="username">Username</label>
+            <br />
+            <input
+              id="username"
+              name="username"
+              onChange={formik.handleChange}
+              value={formik.values.username}
+            />
+            {formik.touched.username && formik.errors.username ? (
+              <div style={{ color: 'red' }}>{formik.errors.username}</div>
+            ) : null}
+            <br />
+  
+            {/* Password */}
+            <label htmlFor="password">Password</label>
+            <br />
+            <input
+              id="password"
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <div style={{ color: 'red' }}>{formik.errors.password}</div>
+            ) : null}
+            <br />
+  
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <button type="submit">Log In</button>
+            )}
+          </form>
+          {Object.keys(errors).length > 0 && (
+            <p style={{ color: "red" }}>{errors}</p>
+          )}
+          <p>Don't have an account? <Link to="/signup">Sign up here</Link></p>
+        </div>
+      </div>
+    </>
+  );  
 }
