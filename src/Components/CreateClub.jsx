@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { useFormik } from "formik";
-import '../Css/AddBook.css'
+import '../Css/CreateClub.css'
 import SweetAlert2 from "sweetalert2"
-import Spinner from "../Components/Spinner"
+import Spinner from "./Spinner"
 import * as yup from 'yup'
 
-export default function AddBook() {
+export default function CreateClub() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
@@ -16,15 +16,15 @@ export default function AddBook() {
   let user_id = localStorage.getItem('user_id');  
 
   const formSchema = yup.object().shape({
-    title: yup.string().required('Title is required'),
-    author: yup.string().required('Author is required'),
+    name: yup.string().required('Name is required'),
+    location: yup.string().required('Location is required'),
     description: yup.string().required('Description is required'),
   });
 
   const formik = useFormik({
     initialValues: {
-      title: '',
-      author: '',
+      name: '',
+      location: '',
       description: '',
     },
     validationSchema: formSchema,
@@ -33,10 +33,10 @@ export default function AddBook() {
       if (user_id === null) {
         SweetAlert2.fire({
           title: "Login Required",
-          text: "You need to login to add a book.",
+          text: "You need to login to create a club.",
           icon: "warning",
           showConfirmButton: false,
-          timer: 4000, 
+          timer: 4000, // Close after 4 seconds
         });
 
         // Redirect to login page after 4 seconds
@@ -72,7 +72,7 @@ export default function AddBook() {
               confirmButtonText: "Nice",
               confirmButtonColor: "#f1cc17",
             });
-            navigate("/books")
+            navigate("/clubs")
           }, 2000);
         } else {
           let errorData = await resp.json();
@@ -93,40 +93,40 @@ export default function AddBook() {
 
   return (
     <>
-      <div className="signUpBackgroundDiv">
-        <div className="main-add-book-div">
-          <div className="addBookDiv">
-            <h1>Add a book to the site</h1>
+      <div className="createClubBackgroundDiv">
+        <div className="main-create-club-div">
+          <div className="createClubDiv">
+            <h1>Create your own club</h1>
             <form onSubmit={formik.handleSubmit} style={{ margin: "30px" }}>
-              {/*Title*/}
-              <label htmlFor="title">Book title</label>
+              {/* Name */}
+              <label htmlFor="name">Club Name</label>
               <br />
               <input
-                id="title"
-                name="title"
+                id="name"
+                name="name"
                 onChange={formik.handleChange}
-                value={formik.values.title}
+                value={formik.values.name}
               />
-              {formik.touched.title && formik.errors.title ? (
-                <div style={{ color: 'red' }}>{formik.errors.title}</div>
+              {formik.touched.name && formik.errors.name ? (
+                <div style={{ color: 'red' }}>{formik.errors.name}</div>
               ) : null}
               <br />
-  
-              {/* Author */}
-              <label htmlFor="author">Author</label>
+      
+              {/* Location */}
+              <label htmlFor="location">Location</label>
               <br />
               <input
-                id="author"
-                name="author"
+                id="location"
+                name="location"
                 onChange={formik.handleChange}
-                value={formik.values.author}
+                value={formik.values.location}
               />
-              {formik.touched.author && formik.errors.author ? (
-                <div style={{ color: 'red' }}>{formik.errors.author}</div>
+              {formik.touched.location && formik.errors.location ? (
+                <div style={{ color: 'red' }}>{formik.errors.location}</div>
               ) : null}
               <br />
-  
-              {/* Description*/}
+      
+              {/* Description */}
               <label htmlFor="description">Description</label>
               <br />
               <input
@@ -139,11 +139,11 @@ export default function AddBook() {
                 <div style={{ color: 'red' }}>{formik.errors.description}</div>
               ) : null}
               <br />
-  
+      
               {isLoading ? (
                 <Spinner />
               ) : (
-                <button type="submit">Add Book</button>
+                <button type="submit">Create Club</button>
               )}
             </form>
             {Object.keys(errors).length > 0 && (

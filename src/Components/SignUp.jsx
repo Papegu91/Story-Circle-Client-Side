@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { useFormik } from "formik";
 import '../Css/SignUp.css'
 import SweetAlert2 from "sweetalert2"
-import Spinner from "../Components/Spinner"
+import Spinner from "./Spinner"
 import * as yup from 'yup'
 
 export default function SignUp() {
