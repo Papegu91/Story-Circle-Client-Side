@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import '../Css/ClubPage.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import BookItem from './BookItem';
-// import { FaLocationDot } from 'react-icons/fa';
 import * as yup from 'yup';
 import { useFormik } from "formik";
+import SweetAlert2 from "sweetalert2"
 
 export default function ClubPage() {
   const club_id  = useParams();

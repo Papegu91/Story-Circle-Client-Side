@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Css/Clubs.css';
 import ClubItem from './ClubItem';
+import SweetAlert2 from "sweetalert2"
+
 
 export default function Clubs() {
   const navigate = useNavigate(); // Initialize useNavigate

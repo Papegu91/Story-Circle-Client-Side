@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Css/Books.css';
 import BookItem from './BookItem';
 import RecommendedBookItem from './RecommendedBook';
+import SweetAlert2 from "sweetalert2"
 
 export default function Books() {
   const navigate = useNavigate(); // Initialize useNavigate
