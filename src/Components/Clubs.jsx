@@ -16,7 +16,7 @@ export default function Clubs() {
   useEffect(() => {
     setLoading(true);
 
-    fetch('http://localhost:5555/clubs', {
+    fetch('https://storycircleserver.onrender.com/clubs', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${mytoken}`,

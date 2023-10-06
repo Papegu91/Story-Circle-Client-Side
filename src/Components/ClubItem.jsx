@@ -32,7 +32,7 @@ export default function ClubItem({club}) {
     };
 
     try {
-      let resp = await fetch('http://localhost:5555/joinclub', {
+      let resp = await fetch('https://storycircleserver.onrender.com/joinclub', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${mytoken}`,

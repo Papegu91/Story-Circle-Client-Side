@@ -17,7 +17,7 @@ export default function Books() {
   useEffect(() => {
     setLoading(true);
 
-    fetch('http://localhost:5555/books', {
+    fetch('https://storycircleserver.onrender.com/books', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${mytoken}`,

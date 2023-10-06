@@ -18,7 +18,7 @@ export default function BookPage() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:5555/books/${book_id.index}`, {
+    fetch(`https://storycircleserver.onrender.com/books/${book_id.index}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${mytoken}`,
@@ -86,7 +86,7 @@ export default function BookPage() {
       };
 
       try {
-        let resp = await fetch("http://localhost:5555/bookcomments", {
+        let resp = await fetch("https://storycircleserver.onrender.com/bookcomments", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

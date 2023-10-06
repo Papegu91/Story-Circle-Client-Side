@@ -26,7 +26,7 @@ export default function LogIn() {
     onSubmit: async (values) => {
 
       try {
-        let resp = await fetch("http://localhost:5555/login", {
+        let resp = await fetch("https://storycircleserver.onrender.com/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

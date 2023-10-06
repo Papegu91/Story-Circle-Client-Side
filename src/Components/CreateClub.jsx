@@ -52,7 +52,7 @@ export default function CreateClub() {
       };
       console.log(JSON.stringify(valuesToSend, null, 2))
       try {
-        let resp = await fetch("http://localhost:5555/clubs", {
+        let resp = await fetch("https://storycircleserver.onrender.com/clubs", {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${mytoken}`,

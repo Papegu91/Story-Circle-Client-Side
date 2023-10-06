@@ -38,7 +38,7 @@ export default function SignUp() {
       }
 
       try {
-        let resp = await fetch("http://localhost:5555/register", {
+        let resp = await fetch("https://storycircleserver.onrender.com/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

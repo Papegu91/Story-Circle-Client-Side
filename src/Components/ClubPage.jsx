@@ -20,7 +20,7 @@ export default function ClubPage() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://localhost:5555/clubs/${club_id.index}`, {
+    fetch(`https://storycircleserver.onrender.com/clubs/${club_id.index}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${mytoken}`,
@@ -81,7 +81,7 @@ export default function ClubPage() {
       };
 
       try {
-        let resp = await fetch("http://localhost:5555/messages", {
+        let resp = await fetch("https://storycircleserver.onrender.com/messages", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
