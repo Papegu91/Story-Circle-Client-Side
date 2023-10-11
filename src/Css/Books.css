@@ -8,7 +8,7 @@
 } 
   
   .add-book-button {
-    background-color: #aed6f1;
+    background-color: #2980B9 ;
     color: #fff;
     border-radius: 15px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
@@ -16,6 +16,7 @@
     border: none; 
     cursor: pointer;
     width: 300px; 
+    height: 45px; 
     font-size: 24px; 
 
   }
@@ -25,7 +26,7 @@
   }
 
   .add-book-button:hover {
-    background-color: #3498db ;
+    background-color: #154360  ;
   }
   
   .add-book-button:active {
@@ -36,6 +37,7 @@
 .book-items-holder {
   background-color: white; 
   min-height: 100vh;
+  padding-top: 30px;
 }
 
 .bookContainer {
@@ -66,7 +68,7 @@
 }
 
 .bookTextDiv h2 {
-  margin-bottom: 10px; /* Add some space between lines */
+  margin-bottom: 10px; 
 }
 
 .moreButtonDiv {
@@ -75,7 +77,7 @@
 }
 
 .moreButtonDiv button {
-  background-color: #AED6F1;
+  background-color: #2980B9 ;
   color: #fff;
   border: none;
   border-radius: 15px;
@@ -88,20 +90,20 @@
 }
 
 .moreButtonDiv button:hover {
-  background-color: #3498db; 
+  background-color: #154360 ; 
 }
 
 .error-message {
   color: #E74C3C;
-  background-color: #f8d7da; /* Use a light red background color */
+  background-color: #f8d7da; 
   padding: 10px;
-  border: 1px solid #f5c6cb; /* Add a border for a box effect */
+  border: 1px solid #f5c6cb; 
   border-radius: 5px;
-  margin-bottom: 10px; /* Add some space below the error message */
+  margin-bottom: 10px; 
 }
 
 .recommendedBookContainer {
-  background-color: #f9f5e1; /* Light gold background color */
+  background-color: #f9f5e1; 
   border-radius: 25px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;

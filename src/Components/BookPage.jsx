@@ -3,6 +3,7 @@ import '../Css/BookPage.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { useFormik } from "formik";
+import SweetAlert2 from "sweetalert2"
 
 export default function BookPage() {
   const book_id = useParams(); 
@@ -11,6 +12,7 @@ export default function BookPage() {
   const [fetchEr, setFetchEr] = useState(null);
   const [loading, setLoading] = useState(false);
   const [messageError, setMessageErrors] = useState(null);
+  const [selectedRating, setSelectedRating] = useState(1);
 
   let mytoken = localStorage.getItem('loginToken');
   let user_id = localStorage.getItem('user_id');  
@@ -48,18 +50,12 @@ export default function BookPage() {
 
   const formSchema = yup.object().shape({
     comment: yup.string().required('Comment is required'),
-    rating: yup
-      .number()
-      .required('Rating is required')
-      .min(1, 'Rating must be at least 1')
-      .max(5, 'Rating must be at most 5'),
   });
   
 
   const formik = useFormik({
     initialValues: {
       comment: '',
-      rating: '',
     },
     validationSchema: formSchema,
     onSubmit: async (values) => {
@@ -77,12 +73,13 @@ export default function BookPage() {
         setTimeout(() => {
           navigate("/login");
         }, 4000);
-        return; // Return early, do not submit form
+        return; 
       }
       let valuesToSend = {
         ...values,
-        user_id: user_id,
-        book_id: book_id,
+        user_id: parseInt(user_id),
+        book_id: parseInt(book_id.index),
+        rating: selectedRating, 
       };
 
       try {
@@ -95,7 +92,9 @@ export default function BookPage() {
         });
 
         if (resp.ok) {
-          window.location.reload(); // Reload the page on success
+          formik.resetForm();
+          setSelectedRating(1); 
+          window.location.reload(); 
         } else {
           let errorData = await resp.json();
           if (resp.status === 500 || resp.status === 401) {
@@ -124,7 +123,16 @@ export default function BookPage() {
     const remainingStars = emptyStar.repeat(maxRating - Math.floor(rating));
 
     return fullStars + remainingStars;
-}
+  }
+
+  function handleStarClick(rating) {
+    if (selectedRating === rating) {
+      setSelectedRating(null); // Deselect if clicked again
+    } else {
+      setSelectedRating(rating);
+    }
+  }
+
 
   return (
 <>
@@ -169,23 +177,25 @@ export default function BookPage() {
                 />
                 <label htmlFor="rating">Rating</label>
                 <br />
-                <input
-                  id="rating"
-                  name="rating"
-                  type='number'
-                  min={1}
-                  max={5}
-                  onChange={formik.handleChange}
-                  value={formik.values.rating}
-                />
+                <div>
+                {[1, 2, 3, 4, 5].map((rating) => (
+                <span
+                  key={rating}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleStarClick(rating)}
+                 >
+                  {rating <= selectedRating ? '★' : '☆'}
+                  </span>
+                  ))}
+               </div>
                 <button type="submit">Add comment</button>
               </div>
               {formik.touched.comment && formik.errors.comment ? (
                 <div style={{ color: 'red' }}>{formik.errors.comment}</div>
               ) : null}
-              {formik.touched.rating && formik.errors.rating ? (
+              {/* {formik.touched.rating && formik.errors.rating ? (
                 <div style={{ color: 'red' }}>{formik.errors.rating}</div>
-              ) : null}
+              ) : null} */}
             </form>
           </div>
         </div>

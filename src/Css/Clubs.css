@@ -8,7 +8,7 @@
 } 
   
   .create-club-button {
-    background-color: #aed6f1;
+    background-color: #2980B9 ;
     color: #fff;
     border-radius: 15px; /* Add border radius */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
@@ -21,32 +21,33 @@
   }
   
   .create-club-button:focus {
-    outline: none; /* Remove button outline on focus */
+    outline: none; 
   }
 
   .create-club-button:hover {
-    background-color: #3498db ;
+    background-color: #154360 ;
   }
   
   .create-club-button:active {
-    transform: translateY(2px); /* Add a slight press-down effect */
+    transform: translateY(2px); 
   }
   
   /* ClubItem CSS */
 .club-items-holder {
-  background-color: white; /* White background color */
-  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  background-color: white; 
+  min-height: 100vh; 
+  padding-top: 30px;
 }
 
 .clubContainer {
-  background-color: #D9D9D9; /* Background color */
-  border-radius: 25px; /* Border radius of 25px */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow */
-  display: flex; /* Display children horizontally */
-  justify-content: space-between; /* Space between children */
-  align-items: center; /* Vertically align children */
-  padding: 10px; /* Add padding for spacing */
-  margin-bottom: 10px; /* Space between club items */
+  background-color: #D9D9D9; 
+  border-radius: 25px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px; 
+  margin-bottom: 10px; 
   width: 80%;
   margin-left: 20px;
 }
@@ -74,7 +75,7 @@
 }
 
 .joinButtonDiv button {
-  background-color: #AED6F1;
+  background-color: #2980B9 ;
   color: #fff;
   border: none;
   border-radius: 15px;
@@ -87,7 +88,7 @@
 }
 
 .joinButtonDiv button:hover {
-  background-color: #3498db; 
+  background-color: #154360 ; 
 }
 
 .skeleton-loader {

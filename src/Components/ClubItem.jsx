@@ -16,19 +16,18 @@ export default function ClubItem({club}) {
         text: "You need to login to join a club.",
         icon: "warning",
         showConfirmButton: false,
-        timer: 4000, // Close after 4 seconds
+        timer: 4000, 
       });
 
-      // Redirect to login page after 4 seconds
       setTimeout(() => {
         navigate("/login");
       }, 4000);
-      return; // Return early, do not submit form
+      return; 
     }
 
     const values = { 
-      club_id: clubID, 
-      user_id: user_id,
+      club_id: parseInt(clubID), 
+      user_id: parseInt(user_id),
     };
 
     try {

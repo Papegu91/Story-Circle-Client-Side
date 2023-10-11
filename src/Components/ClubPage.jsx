@@ -76,9 +76,10 @@ export default function ClubPage() {
       }
       let valuesToSend = {
         ...values,
-        user_id: user_id,
-        club_id: club_id,
+        user_id: parseInt(user_id),
+        club_id: parseInt(club_id.index),
       };
+      console.log( JSON.stringify(valuesToSend, null, 2))
 
       try {
         let resp = await fetch("https://storycircleserver.onrender.com/messages", {
@@ -90,6 +91,7 @@ export default function ClubPage() {
         });
 
         if (resp.ok) {
+          formik.resetForm();
           window.location.reload(); // Reload the page on success
         } else {
           let errorData = await resp.json();

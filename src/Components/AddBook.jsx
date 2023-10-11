@@ -48,7 +48,7 @@ export default function AddBook() {
       
       let valuesToSend = {
         ...values,
-        creator_id: user_id,
+        creator_id: parseInt(user_id),
       };
       console.log(JSON.stringify(valuesToSend, null, 2))
       try {
@@ -93,7 +93,7 @@ export default function AddBook() {
 
   return (
     <>
-      <div className="signUpBackgroundDiv">
+      <div className="">
         <div className="main-add-book-div">
           <div className="addBookDiv">
             <h1>Add a book to the site</h1>
