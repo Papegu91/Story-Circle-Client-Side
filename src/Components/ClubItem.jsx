@@ -81,7 +81,7 @@ export default function ClubItem({club}) {
     <>
       <div className="clubContainer" onClick={() => navigate(`/clubs/${club.id}`)}>
         <div className='iconDiv'>
-          <i class="fa-solid fa-users" style={{ fontSize: '20px' }}></i>
+          <i className="fa-solid fa-users" style={{ fontSize: '20px' }}></i>
         </div>
         <div className='clubTextDiv'>
           <h2>{club.name}</h2>

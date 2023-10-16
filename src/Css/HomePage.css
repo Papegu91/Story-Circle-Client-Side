@@ -24,41 +24,36 @@
 .home-title,
 .home-text {
   color: white;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .home-title {
   font-size: 7rem;
   font-weight: 800;
+  padding-top: 29vh; 
 }
 
 .home-text {
   font-size: 2rem;
-  top: 58%; 
+  padding-top: 0rem; 
 }
 
 .home-links {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Add some space between text and links */
-  position: absolute;
-  bottom: 300px; /* Position the links at the bottom */
-  width: 100%; /* Make sure the links span the full width */
+  padding-top: 3rem; 
 }
 
 .home-links a {
   color: #2471A3;
   text-decoration: none;
-  margin: 0 20px; /* Add space between links */
+  margin: 0 20px;
   font-size: 40px;
 }
 
 .home-links a:hover {
-  text-decoration: none;
-  color: #F4D03F ; /* Change color on hover */
+  color: #F4D03F;
 }
+
+
 

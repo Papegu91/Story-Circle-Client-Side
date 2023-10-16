@@ -76,7 +76,7 @@ export default function ClubPage() {
       }
       let valuesToSend = {
         ...values,
-        user_id: parseInt(user_id),
+        sender_id: parseInt(user_id),
         club_id: parseInt(club_id.index),
       };
       console.log( JSON.stringify(valuesToSend, null, 2))
@@ -85,6 +85,7 @@ export default function ClubPage() {
         let resp = await fetch("https://storycircleserver.onrender.com/messages", {
           method: "POST",
           headers: {
+            Authorization: `Bearer ${mytoken}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(valuesToSend, null, 2),

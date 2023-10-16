@@ -46,7 +46,7 @@ export default function BookPage() {
       .finally(() => {
         setLoading(false);
       });
-  }, [book_id, mytoken]);
+  }, [book_id.index, mytoken]);
 
   const formSchema = yup.object().shape({
     comment: yup.string().required('Comment is required'),
@@ -66,13 +66,13 @@ export default function BookPage() {
           text: "You need to login to leave a comment on a book.",
           icon: "warning",
           showConfirmButton: false,
-          timer: 4000, // Close after 4 seconds
+          timer: 3000, // Close after 3 seconds
         });
 
-        // Redirect to login page after 4 seconds
+        // Redirect to login page after 3 seconds
         setTimeout(() => {
           navigate("/login");
-        }, 4000);
+        }, 3000);
         return; 
       }
       let valuesToSend = {
@@ -81,11 +81,12 @@ export default function BookPage() {
         book_id: parseInt(book_id.index),
         rating: selectedRating, 
       };
-
+      
       try {
         let resp = await fetch("https://storycircleserver.onrender.com/bookcomments", {
           method: "POST",
           headers: {
+            Authorization: `Bearer ${mytoken}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(valuesToSend, null, 2),

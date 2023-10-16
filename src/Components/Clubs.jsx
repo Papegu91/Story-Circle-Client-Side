@@ -6,7 +6,7 @@ import SweetAlert2 from "sweetalert2"
 
 
 export default function Clubs() {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const [clubs, setClubs] = useState([]);
   const [fetchEr, setFetchEr] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -56,12 +56,7 @@ export default function Clubs() {
       </div>
       <div className='club-items-holder'>
         {loading ? (
-          // Render skeleton loader when loading is true
-          <>
-            <div className='skeleton-loader'></div>
-            <div className='skeleton-loader'></div>
-            <div className='skeleton-loader'></div>
-          </>
+                  <h1>Loading ...</h1>
         ) : fetchEr ? (
           // Render error message if fetchEr is set
           <div className="error-message">{fetchEr.message}</div> // Apply error message class

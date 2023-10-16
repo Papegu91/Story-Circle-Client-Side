@@ -50,9 +50,9 @@ export default function AddBook() {
         ...values,
         creator_id: parseInt(user_id),
       };
-      console.log(JSON.stringify(valuesToSend, null, 2))
+      
       try {
-        let resp = await fetch("https://storycircleserver.onrender.com/clubs", {
+        let resp = await fetch("https://storycircleserver.onrender.com/books", {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${mytoken}`,
@@ -67,7 +67,7 @@ export default function AddBook() {
             setIsLoading(false);
             SweetAlert2.fire({
               title: "Success!",
-              text: "Successfully added club",
+              text: "Successfully added book",
               icon: "success",
               confirmButtonText: "Nice",
               confirmButtonColor: "#f1cc17",
@@ -80,7 +80,7 @@ export default function AddBook() {
             // Internal Server Error - Database error
             setErrors("Internal server error. Please try again later.");
           } else if(resp.status == 400){
-            setErrors("Club already exists.")
+            setErrors("Book already exists.")
           } else {
             setErrors(errorData.message);
           }
