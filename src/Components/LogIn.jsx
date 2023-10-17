@@ -53,10 +53,11 @@ export default function LogIn() {
           }, 2000);
         } else {
           let errorData = await resp.json();
-          if (resp.status === 500 || resp.status === 401 ) {
-            // Internal Server Error - Database error
+          if ( resp.status === 401 ) {
             setErrors("Invalid username or password.");
-          } else {
+          } else if (resp.status === 500){
+            setErrors("Server side error.");
+          }else {
             setErrors(errorData.message);
           }
         }
