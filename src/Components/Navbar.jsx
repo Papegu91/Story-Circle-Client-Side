@@ -20,10 +20,10 @@ export default function NavBar() {
                 <div className="bar"></div>
             </div>
             <ul className={`nav-links ${showLinks ? 'show' : ''}`}>
-                <li><NavLink exact to="/" onClick={toggleLinks}>Home</NavLink></li>
-                <li><NavLink exact to="/clubs" onClick={toggleLinks}>Clubs</NavLink></li>
-                <li><NavLink exact to="/books" onClick={toggleLinks}>Books</NavLink></li>
-                <li><NavLink exact to="/about" onClick={toggleLinks}>About</NavLink></li>
+                <li><NavLink to="/" onClick={toggleLinks}>Home</NavLink></li>
+                <li><NavLink to="/clubs" onClick={toggleLinks}>Clubs</NavLink></li>
+                <li><NavLink to="/books" onClick={toggleLinks}>Books</NavLink></li>
+                <li><NavLink to="/about" onClick={toggleLinks}>About</NavLink></li>
             </ul>
         </nav>
     )

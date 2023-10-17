@@ -85,7 +85,7 @@ export default function ClubItem({club}) {
         </div>
         <div className='clubTextDiv'>
           <h2>{club.name}</h2>
-          <h2> <i class="fa-solid fa-location-dot"></i>   {club.location}</h2>
+          <h2> <i className="fa-solid fa-location-dot"></i>   {club.location}</h2>
         </div>
         <div className='joinButtonDiv'>
           <button onClick={() => handleJoinClick(club.id)}>Join</button>
